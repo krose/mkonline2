@@ -4,7 +4,7 @@
 \alias{mk_token}
 \title{Function to get a valid token for the API.}
 \usage{
-mk_token(client_id, client_secret)
+mk_token(client_id = NULL, client_secret = NULL)
 }
 \arguments{
 \item{client_id}{A client id from MK Online.}
