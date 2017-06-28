@@ -1,11 +1,13 @@
 Package: mkonline2
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R Wrapper for the MK Online API
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Kenneth Rose
+Maintainer: Kenneth Rose <kennethrose82@gmail.com>
+Description: This package wraps the API from MK Online.
+    For this package to work, you need a client id and client secret from
+    MK Online.
+License: MIT
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.0.1
