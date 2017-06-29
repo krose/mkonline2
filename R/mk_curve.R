@@ -2,17 +2,21 @@
 
 #' FUnction to get the curve attributes.
 #'
+#' @param query_list Named list with search params. If the get method is
+#'     used the query_list must uniquely identify a curve.
+#' @param method Method: get, search or access
 #' @param token Token
-#' @param query_list Named list with search params.
 #'
 #' @export
 #'
 #' @examples
 #' library(mkonline2)
 #'
-#' mk_curve_search(query_list = list(query = "de"))
+#' mk_curve(query_list = list(query = "de"), method = "search")
+#' mk_curve(query_list = list(id = 2), method = "get")
+#' mk_curve(query_list = list(id = 2), method = "access")
 #'
-mk_curve_search <- function(token = NULL, query_list = NULL){
+mk_curve <- function(query_list = NULL, method = "get", token = NULL){
 
   # If there is no token, get one
   if(is.null(token)){
@@ -30,8 +34,13 @@ mk_curve_search <- function(token = NULL, query_list = NULL){
   # Construct the url
   url <- httr::parse_url("https://data.mkonline.io/api/curves")
 
-  if(!is.null(query_list)){
+  if(method == "get"){
+    url$path <- paste0(url$path, "/get")
+  } else if(method == "access"){
+    url$path <- paste0(url$path, "/", query_list$id[1], "/access")
+  }
 
+  if(!is.null(query_list) & method != "access"){
     url$query <- query_list
   }
 
