@@ -37,7 +37,7 @@ mk_curve <- function(query_list = NULL, method = "get", token = NULL){
   if(method == "get"){
     url$path <- paste0(url$path, "/get")
   } else if(method == "access"){
-    url$path <- paste0(url$path, "/", query_list$id[1], "/access")
+    url$path <- paste0(url$path, "/:", query_list$id[1], "/access")
   }
 
   if(!is.null(query_list) & method != "access"){
