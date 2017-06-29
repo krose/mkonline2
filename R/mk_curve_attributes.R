@@ -2,6 +2,9 @@
 #'
 #' @param curve_attr The name of the curve attribute you want. The
 #'     current possibilities are: areas, categories, commodities
+#'
+#' @export
+#'
 mk_curve_attributes <- function(curve_attr, token = NULL){
 
   ######################################
