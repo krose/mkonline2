@@ -24,7 +24,7 @@ mk_token <- function(client_id = NULL, client_secret = NULL){
 
   httr::set_config(auth)
 
-  cnt <- httr::POST(url = "https://auth.mkonline.com/oauth2/token",
+  cnt <- httr::POST(url = "https://auth.wattsight.com/oauth2/token",
                     httr::user_agent("https://github.com/krose/mkonline2"),
                     body = list(grant_type = "client_credentials"),
                     encode = "form")

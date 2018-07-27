@@ -41,7 +41,7 @@ mk_curve_attributes <- function(curve_attr, token = NULL){
   ########################################
 
   # Construct the url
-  url <- paste0("https://data.mkonline.io/api/", curve_attr)
+  url <- paste0("https://api.wattsight.com/api/", curve_attr)
 
   cnt <- httr::GET(url,
                    httr::user_agent("https://github.com/krose/mkonline2"),
