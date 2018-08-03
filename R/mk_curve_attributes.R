@@ -45,6 +45,7 @@ mk_curve_attributes <- function(curve_attr, token = NULL){
 
   cnt <- httr::GET(url,
                    httr::user_agent("https://github.com/krose/mkonline2"),
+                   httr::accept_json(),
                    httr::add_headers('Authorization' = paste("Bearer", token$access_token)))
 
   # Return an error if is one.
