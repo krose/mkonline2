@@ -4,10 +4,26 @@
 \alias{mk_series}
 \title{FUnction to get the curve attributes.}
 \usage{
-mk_series(curve_id, token = NULL)
+mk_series(id, from = NULL, to = NULL, time_zone = NULL,
+  ws_filter = NULL, ws_function = NULL, frequency = NULL,
+  output_time_zone = NULL, token = NULL)
 }
 \arguments{
-\item{curve_id}{Curve id. Integer.}
+\item{id}{Curve id. Integer.}
+
+\item{from}{character.}
+
+\item{to}{Character.}
+
+\item{time_zone}{Character.}
+
+\item{ws_filter}{Character.}
+
+\item{ws_function}{Character.}
+
+\item{frequency}{Character.}
+
+\item{output_time_zone}{Character.}
 
 \item{token}{Token}
 }

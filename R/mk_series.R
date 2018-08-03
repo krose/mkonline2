@@ -2,7 +2,14 @@
 
 #' FUnction to get the curve attributes.
 #'
-#' @param curve_id Curve id. Integer.
+#' @param id Curve id. Integer.
+#' @param from character.
+#' @param to Character.
+#' @param time_zone Character.
+#' @param ws_filter Character.
+#' @param ws_function Character.
+#' @param frequency Character.
+#' @param output_time_zone Character.
 #' @param token Token
 #'
 #' @export
@@ -12,7 +19,20 @@
 #'
 #' mk_series(curve_id = 2)
 #'
-mk_series <- function(curve_id, token = NULL){
+mk_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
+                      ws_filter = NULL, ws_function = NULL, frequency = NULL,
+                      output_time_zone = NULL, token = NULL){
+
+  params <- list(from = from,
+                 to = to,
+                 time_zone = time_zone,
+                 ws_filter = ws_filter,
+                 ws_function = ws_function,
+                 frequency = frequency,
+                 output_time_zone = output_time_zone)
+
+  params[sapply(params, is.null)] <- NULL
+
 
   # If there is no token, get one
   if(is.null(token)){
@@ -30,12 +50,14 @@ mk_series <- function(curve_id, token = NULL){
   # Construct the url
   url <- httr::parse_url("https://api.wattsight.com/api/series")
 
-  url$path <- paste0(url$path, "/:", curve_id)
+  url$path <- paste0(url$path, "/", id)
+  url$query <- params
 
   url <- httr::build_url(url)
 
   cnt <- httr::GET(url,
                    httr::user_agent("https://github.com/krose/mkonline2"),
+                   httr::accept_json(),
                    httr::add_headers('Authorization' = paste("Bearer", token$access_token)))
 
   # Return an error if is one.
@@ -48,5 +70,18 @@ mk_series <- function(curve_id, token = NULL){
   cnt <- httr::content(x = cnt, as = "text", encoding = "UTF-8")
   cnt <- jsonlite::fromJSON(cnt)
 
-  cnt
+  # convert to df and make output easier to work with.
+  cnt$points <- as.data.frame(cnt$points)
+  names(cnt$points) <- c("dt", "values")
+
+  cnt$points$dt <- as.POSIXct.numeric(x = cnt$points$dt / 1000, tz = "GMT", origin = "1970-01-01")
+
+  ws_s <- cnt$points
+
+  attr(ws_s, "frequency") <-  cnt$frequency
+  attr(ws_s, "time_zone") <-  cnt$time_zone
+  attr(ws_s, "id") <-  cnt$id
+  attr(ws_s, "name") <-  cnt$name
+
+  ws_s
 }
