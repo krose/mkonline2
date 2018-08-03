@@ -5,7 +5,7 @@
 #'
 #' @export
 #'
-mk_curve_attributes <- function(curve_attr, token = NULL){
+ws_curve_attributes <- function(curve_attr, token = NULL){
 
   ######################################
   # Checks
