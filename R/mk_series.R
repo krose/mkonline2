@@ -30,7 +30,7 @@ mk_series <- function(curve_id, token = NULL){
   # Construct the url
   url <- httr::parse_url("https://api.wattsight.com/api/series")
 
-  url$path <- paste0(url$path, "/:", curve_id)
+  url$path <- paste0(url$path, "/", curve_id)
 
   url <- httr::build_url(url)
 
