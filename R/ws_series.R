@@ -15,11 +15,11 @@
 #' @export
 #'
 #' @examples
-#' library(mkonline2)
+#' library(wattsight2)
 #'
 #' mk_series(curve_id = 2)
 #'
-mk_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
+ws_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
                       ws_filter = NULL, ws_function = NULL, frequency = NULL,
                       output_time_zone = NULL, token = NULL){
 
@@ -56,7 +56,7 @@ mk_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
   url <- httr::build_url(url)
 
   cnt <- httr::GET(url,
-                   httr::user_agent("https://github.com/krose/mkonline2"),
+                   httr::user_agent("https://github.com/krose/wattsight2"),
                    httr::accept_json(),
                    httr::add_headers('Authorization' = paste("Bearer", token$access_token)))
 

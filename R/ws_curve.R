@@ -10,13 +10,13 @@
 #' @export
 #'
 #' @examples
-#' library(mkonline2)
+#' library(wattsight)
 #'
-#' mk_curve(query_list = list(query = "de"), method = "search")
-#' mk_curve(query_list = list(id = 2), method = "get")
-#' mk_curve(query_list = list(id = 2), method = "access")
+#' ws_curve(query_list = list(query = "de"), method = "search")
+#' ws_curve(query_list = list(id = 2), method = "get")
+#' ws_curve(query_list = list(id = 2), method = "access")
 #'
-mk_curve <- function(query_list = NULL, method = "get", token = NULL){
+ws_curve <- function(query_list = NULL, method = "get", token = NULL){
 
   # If there is no token, get one
   if(is.null(token)){
