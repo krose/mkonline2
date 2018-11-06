@@ -36,7 +36,7 @@ mk_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
 
   # If there is no token, get one
   if(is.null(token)){
-    token <- mk_token()
+    token <- ws_token()
   }
 
   #######################################

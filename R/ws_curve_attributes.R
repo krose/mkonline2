@@ -5,6 +5,21 @@
 #'
 #' @export
 #'
+#' @examples
+#'
+#' ws_curve_attributes("areas")
+#' ws_curve_attributes("categories")
+#' ws_curve_attributes("commodities")
+#' ws_curve_attributes("curve_types")
+#' ws_curve_attributes("data_types")
+#' ws_curve_attributes("frequencies")
+#' ws_curve_attributes("functions")
+#' ws_curve_attributes("sources")
+#' ws_curve_attributes("stations")
+#' ws_curve_attributes("storage_types")
+#' ws_curve_attributes("time_zones")
+#' ws_curve_attributes("units")
+#'
 ws_curve_attributes <- function(curve_attr, token = NULL){
 
   ######################################

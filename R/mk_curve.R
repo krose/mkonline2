@@ -20,7 +20,7 @@ mk_curve <- function(query_list = NULL, method = "get", token = NULL){
 
   # If there is no token, get one
   if(is.null(token)){
-    token <- mk_token()
+    token <- ws_token()
   }
 
   #######################################
