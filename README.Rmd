@@ -14,16 +14,18 @@ knitr::opts_chunk$set(
 
 # mkonline2
 
-This package let's you access the RESTful API from MKOnline. The API is currently in beta and breaking changes might happen.
+This package let's you access the RESTful API from Wattsight. The API is currently in beta and breaking changes might happen.
+
+* MkOnline has changed its name to Wattsight. These changes will be implemented when I get the time.
 
 ## Installation
 
-Get a client id and password from [MKOnline](http://auth.mkonline.com/) and save it to the .Renviron file as.
+Get a client id and password from [Wattsight](http://auth.wattsight.com/) and save it to the .Renviron file as.
 
 ```
 
-MK_CLIENT_ID = <CLIENT ID>
-MK_CLIENT_SECRET = <PASSWORD>
+WS_CLIENT_ID = <CLIENT ID>
+WS_CLIENT_SECRET = <PASSWORD>
 
 ```
 

@@ -7,13 +7,13 @@
 #'
 #' @param client_id A client id from MK Online.
 #' @param client_secret A client secret from MK Online.
-mk_token <- function(client_id = NULL, client_secret = NULL){
+ws_token <- function(client_id = NULL, client_secret = NULL){
 
   if(is.null(client_id)){
-    client_id <- Sys.getenv("MK_CLIENT_ID")
+    client_id <- Sys.getenv("WS_CLIENT_ID")
   }
   if(is.null(client_secret)){
-    client_secret <- Sys.getenv("MK_CLIENT_SECRET")
+    client_secret <- Sys.getenv("WS_CLIENT_SECRET")
   }
 
   if(client_id == "" | client_secret == ""){
