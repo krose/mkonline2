@@ -16,7 +16,7 @@
 #' ws_curve_attributes("functions")
 #' ws_curve_attributes("sources")
 #' ws_curve_attributes("stations")
-#' ws_curve_attributes("storage_types")
+#' # ws_curve_attributes("storage_types")
 #' ws_curve_attributes("time_zones")
 #' ws_curve_attributes("units")
 #'
@@ -44,7 +44,7 @@ ws_curve_attributes <- function(curve_attr, token = NULL){
 
   # If there is no token, get one
   if(is.null(token)){
-    token <- mk_token()
+    token <- ws_token()
   }
 
   #######################################

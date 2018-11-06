@@ -84,7 +84,7 @@ ws_tagged <- function(id, tag = NULL, from = NULL, to = NULL,
 
   # If there is no token, get one
   if(is.null(token)){
-    token <- mk_token()
+    token <- ws_token()
   }
 
   #######################################

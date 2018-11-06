@@ -24,7 +24,7 @@ ws_curve_attributes("frequencies")
 ws_curve_attributes("functions")
 ws_curve_attributes("sources")
 ws_curve_attributes("stations")
-ws_curve_attributes("storage_types")
+# ws_curve_attributes("storage_types")
 ws_curve_attributes("time_zones")
 ws_curve_attributes("units")
 
