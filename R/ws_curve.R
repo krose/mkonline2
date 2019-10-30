@@ -10,7 +10,7 @@
 #' @export
 #'
 #' @examples
-#' library(wattsight)
+#' library(wattsight2)
 #'
 #' ws_curve(query_list = list(query = "de"), method = "search")
 #' ws_curve(query_list = list(id = 2), method = "get")

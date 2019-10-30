@@ -18,7 +18,7 @@ used the query_list must uniquely identify a curve.}
 FUnction to get the curve attributes.
 }
 \examples{
-library(wattsight)
+library(wattsight2)
 
 ws_curve(query_list = list(query = "de"), method = "search")
 ws_curve(query_list = list(id = 2), method = "get")

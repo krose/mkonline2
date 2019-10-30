@@ -17,7 +17,7 @@
 #' @examples
 #' library(wattsight2)
 #'
-#' ws_series(curve_id = 2)
+#' ws_series(id = 2)
 #'
 ws_series <- function(id, from = NULL, to = NULL, time_zone = NULL,
                       ws_filter = NULL, ws_function = NULL, frequency = NULL,

@@ -33,6 +33,6 @@ FUnction to get the curve attributes.
 \examples{
 library(wattsight2)
 
-ws_series(curve_id = 2)
+ws_series(id = 2)
 
 }
